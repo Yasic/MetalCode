@@ -1,0 +1,18 @@
+YasicMetalDemo.xcworkspace/xcshareddata/
+Pods/Pods.xcodeproj/xcuserdata/*.xcuserdatad/
+YasicMetalDemo.xcodeproj/xcuserdata/*.xcuserdatad/
+YasicMetalDemo.xcodeproj/xcuserdata/
+.DS_Store
+YasicMetalDemo.xcworkspace/xcuserdata/
+YasicMetalDemo.xcworkspace/xcuserdata/*.xcuserdatad/
+Pods/Pods.xcodeproj/xcuserdata/
+build/
+*.swp
+*.xcscheme
+
+# fastlane specific
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+.idea/

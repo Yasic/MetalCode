@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		74A99F97215B38DB000881C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A99F96215B38DB000881C3 /* AppDelegate.m */; };
+		74A99F9A215B38DB000881C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A99F99215B38DB000881C3 /* ViewController.m */; };
+		74A99F9D215B38DB000881C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A99F9B215B38DB000881C3 /* Main.storyboard */; };
+		74A99F9F215B38DC000881C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A99F9E215B38DC000881C3 /* Assets.xcassets */; };
+		74A99FA2215B38DC000881C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A99FA0215B38DC000881C3 /* LaunchScreen.storyboard */; };
+		74A99FA5215B38DC000881C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A99FA4215B38DC000881C3 /* main.m */; };
+		ECF69B02C516D217981B0E2D /* libPods-YasicMetalDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C0BF3B7AE62BFCC26FD2DD /* libPods-YasicMetalDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07604BC25261B86780F13587 /* Pods-YasicMetalDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YasicMetalDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YasicMetalDemo/Pods-YasicMetalDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		342557A71E953499534F41CE /* Pods-YasicMetalDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YasicMetalDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YasicMetalDemo/Pods-YasicMetalDemo.release.xcconfig"; sourceTree = "<group>"; };
+		68C0BF3B7AE62BFCC26FD2DD /* libPods-YasicMetalDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YasicMetalDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74A99F92215B38DB000881C3 /* YasicMetalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YasicMetalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74A99F95215B38DB000881C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		74A99F96215B38DB000881C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		74A99F98215B38DB000881C3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		74A99F99215B38DB000881C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		74A99F9C215B38DB000881C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74A99F9E215B38DC000881C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		74A99FA1215B38DC000881C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		74A99FA3215B38DC000881C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74A99FA4215B38DC000881C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		74A99F8F215B38DB000881C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF69B02C516D217981B0E2D /* libPods-YasicMetalDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		74A99F89215B38DB000881C3 = {
+			isa = PBXGroup;
+			children = (
+				74A99F94215B38DB000881C3 /* YasicMetalDemo */,
+				74A99F93215B38DB000881C3 /* Products */,
+				E22E7C57E99DD03EB646701D /* Pods */,
+				9FBC659E1D3EFAF5D8B47835 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		74A99F93215B38DB000881C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74A99F92215B38DB000881C3 /* YasicMetalDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74A99F94215B38DB000881C3 /* YasicMetalDemo */ = {
+			isa = PBXGroup;
+			children = (
+				74A99F95215B38DB000881C3 /* AppDelegate.h */,
+				74A99F96215B38DB000881C3 /* AppDelegate.m */,
+				74A99F98215B38DB000881C3 /* ViewController.h */,
+				74A99F99215B38DB000881C3 /* ViewController.m */,
+				74A99F9B215B38DB000881C3 /* Main.storyboard */,
+				74A99F9E215B38DC000881C3 /* Assets.xcassets */,
+				74A99FA0215B38DC000881C3 /* LaunchScreen.storyboard */,
+				74A99FA3215B38DC000881C3 /* Info.plist */,
+				74A99FA4215B38DC000881C3 /* main.m */,
+			);
+			path = YasicMetalDemo;
+			sourceTree = "<group>";
+		};
+		9FBC659E1D3EFAF5D8B47835 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68C0BF3B7AE62BFCC26FD2DD /* libPods-YasicMetalDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E22E7C57E99DD03EB646701D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07604BC25261B86780F13587 /* Pods-YasicMetalDemo.debug.xcconfig */,
+				342557A71E953499534F41CE /* Pods-YasicMetalDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		74A99F91215B38DB000881C3 /* YasicMetalDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74A99FA8215B38DC000881C3 /* Build configuration list for PBXNativeTarget "YasicMetalDemo" */;
+			buildPhases = (
+				BDBB7C2824C50AA03C339310 /* [CP] Check Pods Manifest.lock */,
+				74A99F8E215B38DB000881C3 /* Sources */,
+				74A99F8F215B38DB000881C3 /* Frameworks */,
+				74A99F90215B38DB000881C3 /* Resources */,
+				364C3592A27D14CAEEEA912B /* [CP] Embed Pods Frameworks */,
+				C3AE21862839E61AA34547A7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YasicMetalDemo;
+			productName = YasicMetalDemo;
+			productReference = 74A99F92215B38DB000881C3 /* YasicMetalDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74A99F8A215B38DB000881C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = yasic;
+				TargetAttributes = {
+					74A99F91215B38DB000881C3 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = 74A99F8D215B38DB000881C3 /* Build configuration list for PBXProject "YasicMetalDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 74A99F89215B38DB000881C3;
+			productRefGroup = 74A99F93215B38DB000881C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74A99F91215B38DB000881C3 /* YasicMetalDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		74A99F90215B38DB000881C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74A99FA2215B38DC000881C3 /* LaunchScreen.storyboard in Resources */,
+				74A99F9F215B38DC000881C3 /* Assets.xcassets in Resources */,
+				74A99F9D215B38DB000881C3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		364C3592A27D14CAEEEA912B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YasicMetalDemo/Pods-YasicMetalDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDBB7C2824C50AA03C339310 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C3AE21862839E61AA34547A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YasicMetalDemo/Pods-YasicMetalDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74A99F8E215B38DB000881C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74A99F9A215B38DB000881C3 /* ViewController.m in Sources */,
+				74A99FA5215B38DC000881C3 /* main.m in Sources */,
+				74A99F97215B38DB000881C3 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		74A99F9B215B38DB000881C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74A99F9C215B38DB000881C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		74A99FA0215B38DC000881C3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74A99FA1215B38DC000881C3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		74A99FA6215B38DC000881C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		74A99FA7215B38DC000881C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		74A99FA9215B38DC000881C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07604BC25261B86780F13587 /* Pods-YasicMetalDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJYQWG36VA;
+				INFOPLIST_FILE = YasicMetalDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = developer.technology.YasicMetalDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		74A99FAA215B38DC000881C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 342557A71E953499534F41CE /* Pods-YasicMetalDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJYQWG36VA;
+				INFOPLIST_FILE = YasicMetalDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = developer.technology.YasicMetalDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74A99F8D215B38DB000881C3 /* Build configuration list for PBXProject "YasicMetalDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74A99FA6215B38DC000881C3 /* Debug */,
+				74A99FA7215B38DC000881C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74A99FA8215B38DC000881C3 /* Build configuration list for PBXNativeTarget "YasicMetalDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74A99FA9215B38DC000881C3 /* Debug */,
+				74A99FAA215B38DC000881C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 74A99F8A215B38DB000881C3 /* Project object */;
+}
