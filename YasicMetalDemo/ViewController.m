@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "YMDImageLUTFilterPage.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor redColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    YMDImageLUTFilterPage *imagePage = [[YMDImageLUTFilterPage alloc] init];
+    [self.navigationController pushViewController:imagePage animated:NO];
 }
 
 @end

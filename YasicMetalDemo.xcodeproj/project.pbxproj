@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		745ADD50215CCB90005CAC69 /* YMDImageLUTFilterPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD4F215CCB90005CAC69 /* YMDImageLUTFilterPage.m */; };
+		745ADD53215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD52215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m */; };
+		745ADD57215CE0B4005CAC69 /* YMDFilterProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD56215CE0B4005CAC69 /* YMDFilterProcessor.m */; };
+		745ADD5B215CE31B005CAC69 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD5A215CE31B005CAC69 /* Shaders.metal */; };
 		74A99F97215B38DB000881C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A99F96215B38DB000881C3 /* AppDelegate.m */; };
 		74A99F9A215B38DB000881C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A99F99215B38DB000881C3 /* ViewController.m */; };
 		74A99F9D215B38DB000881C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A99F9B215B38DB000881C3 /* Main.storyboard */; };
@@ -20,6 +24,14 @@
 		07604BC25261B86780F13587 /* Pods-YasicMetalDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YasicMetalDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YasicMetalDemo/Pods-YasicMetalDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		342557A71E953499534F41CE /* Pods-YasicMetalDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YasicMetalDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YasicMetalDemo/Pods-YasicMetalDemo.release.xcconfig"; sourceTree = "<group>"; };
 		68C0BF3B7AE62BFCC26FD2DD /* libPods-YasicMetalDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YasicMetalDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		745ADD4E215CCB90005CAC69 /* YMDImageLUTFilterPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMDImageLUTFilterPage.h; sourceTree = "<group>"; };
+		745ADD4F215CCB90005CAC69 /* YMDImageLUTFilterPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMDImageLUTFilterPage.m; sourceTree = "<group>"; };
+		745ADD51215CCBAA005CAC69 /* YMDVideoLUTFilterPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMDVideoLUTFilterPage.h; sourceTree = "<group>"; };
+		745ADD52215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMDVideoLUTFilterPage.m; sourceTree = "<group>"; };
+		745ADD54215CE024005CAC69 /* YMDMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMDMacros.h; sourceTree = "<group>"; };
+		745ADD55215CE0B4005CAC69 /* YMDFilterProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMDFilterProcessor.h; sourceTree = "<group>"; };
+		745ADD56215CE0B4005CAC69 /* YMDFilterProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMDFilterProcessor.m; sourceTree = "<group>"; };
+		745ADD5A215CE31B005CAC69 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		74A99F92215B38DB000881C3 /* YasicMetalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YasicMetalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A99F95215B38DB000881C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		74A99F96215B38DB000881C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,6 +56,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		745ADD48215CCB2D005CAC69 /* LUTFilter */ = {
+			isa = PBXGroup;
+			children = (
+				745ADD49215CCB2D005CAC69 /* Page */,
+				745ADD4A215CCB2D005CAC69 /* Util */,
+			);
+			path = LUTFilter;
+			sourceTree = "<group>";
+		};
+		745ADD49215CCB2D005CAC69 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				745ADD4E215CCB90005CAC69 /* YMDImageLUTFilterPage.h */,
+				745ADD4F215CCB90005CAC69 /* YMDImageLUTFilterPage.m */,
+				745ADD51215CCBAA005CAC69 /* YMDVideoLUTFilterPage.h */,
+				745ADD52215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		745ADD4A215CCB2D005CAC69 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				745ADD55215CE0B4005CAC69 /* YMDFilterProcessor.h */,
+				745ADD56215CE0B4005CAC69 /* YMDFilterProcessor.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		745ADD58215CE31B005CAC69 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				745ADD59215CE31B005CAC69 /* MetalShader */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		745ADD59215CE31B005CAC69 /* MetalShader */ = {
+			isa = PBXGroup;
+			children = (
+				745ADD5A215CE31B005CAC69 /* Shaders.metal */,
+			);
+			path = MetalShader;
+			sourceTree = "<group>";
+		};
 		74A99F89215B38DB000881C3 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +122,8 @@
 		74A99F94215B38DB000881C3 /* YasicMetalDemo */ = {
 			isa = PBXGroup;
 			children = (
+				745ADD58215CE31B005CAC69 /* Resource */,
+				745ADD48215CCB2D005CAC69 /* LUTFilter */,
 				74A99F95215B38DB000881C3 /* AppDelegate.h */,
 				74A99F96215B38DB000881C3 /* AppDelegate.m */,
 				74A99F98215B38DB000881C3 /* ViewController.h */,
@@ -74,6 +133,7 @@
 				74A99FA0215B38DC000881C3 /* LaunchScreen.storyboard */,
 				74A99FA3215B38DC000881C3 /* Info.plist */,
 				74A99FA4215B38DC000881C3 /* main.m */,
+				745ADD54215CE024005CAC69 /* YMDMacros.h */,
 			);
 			path = YasicMetalDemo;
 			sourceTree = "<group>";
@@ -217,8 +277,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A99F9A215B38DB000881C3 /* ViewController.m in Sources */,
+				745ADD5B215CE31B005CAC69 /* Shaders.metal in Sources */,
+				745ADD53215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m in Sources */,
 				74A99FA5215B38DC000881C3 /* main.m in Sources */,
+				745ADD57215CE0B4005CAC69 /* YMDFilterProcessor.m in Sources */,
 				74A99F97215B38DB000881C3 /* AppDelegate.m in Sources */,
+				745ADD50215CCB90005CAC69 /* YMDImageLUTFilterPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
