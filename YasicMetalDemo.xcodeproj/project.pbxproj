@@ -11,6 +11,7 @@
 		745ADD53215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD52215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m */; };
 		745ADD57215CE0B4005CAC69 /* YMDFilterProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD56215CE0B4005CAC69 /* YMDFilterProcessor.m */; };
 		745ADD5B215CE31B005CAC69 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD5A215CE31B005CAC69 /* Shaders.metal */; };
+		745ADD62216B06A0005CAC69 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 745ADD61216B069F005CAC69 /* video.mp4 */; };
 		74A99F97215B38DB000881C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A99F96215B38DB000881C3 /* AppDelegate.m */; };
 		74A99F9A215B38DB000881C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A99F99215B38DB000881C3 /* ViewController.m */; };
 		74A99F9D215B38DB000881C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A99F9B215B38DB000881C3 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		745ADD55215CE0B4005CAC69 /* YMDFilterProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMDFilterProcessor.h; sourceTree = "<group>"; };
 		745ADD56215CE0B4005CAC69 /* YMDFilterProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMDFilterProcessor.m; sourceTree = "<group>"; };
 		745ADD5A215CE31B005CAC69 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		745ADD61216B069F005CAC69 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		74A99F92215B38DB000881C3 /* YasicMetalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YasicMetalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A99F95215B38DB000881C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		74A99F96215B38DB000881C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		745ADD58215CE31B005CAC69 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				745ADD61216B069F005CAC69 /* video.mp4 */,
 				745ADD59215CE31B005CAC69 /* MetalShader */,
 			);
 			path = Resource;
@@ -217,6 +220,7 @@
 			files = (
 				74A99FA2215B38DC000881C3 /* LaunchScreen.storyboard in Resources */,
 				74A99F9F215B38DC000881C3 /* Assets.xcassets in Resources */,
+				745ADD62216B06A0005CAC69 /* video.mp4 in Resources */,
 				74A99F9D215B38DB000881C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +427,7 @@
 			baseConfigurationReference = 07604BC25261B86780F13587 /* Pods-YasicMetalDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GJYQWG36VA;
 				INFOPLIST_FILE = YasicMetalDemo/Info.plist;
@@ -432,6 +437,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = developer.technology.YasicMetalDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -441,6 +447,7 @@
 			baseConfigurationReference = 342557A71E953499534F41CE /* Pods-YasicMetalDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GJYQWG36VA;
 				INFOPLIST_FILE = YasicMetalDemo/Info.plist;
@@ -450,6 +457,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = developer.technology.YasicMetalDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

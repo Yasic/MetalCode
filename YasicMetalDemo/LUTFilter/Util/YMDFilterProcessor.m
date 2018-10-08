@@ -29,6 +29,9 @@ static const float vertexArrayData[] = {
 @property (nonatomic, strong) id<MTLTexture> originalTexture;
 @property (nonatomic, strong) dispatch_semaphore_t renderSemaphore;
 
+@property (nonatomic, assign) CVMetalTextureCacheRef textureCache; // 纹理缓存
+@property (nonatomic, strong) MTKTextureLoader *loader; // 纹理加载器
+
 @end
 
 @implementation YMDFilterProcessor
@@ -53,6 +56,10 @@ static const float vertexArrayData[] = {
         self.commandQueue = [self.mtlDevice newCommandQueue]; // 获取一个渲染队列，其中装载需要渲染的指令 MTLCommandBuffer
         
         self.renderSemaphore = dispatch_semaphore_create(1);
+        
+        CVMetalTextureCacheCreate(NULL, NULL, self.mtlDevice, NULL, &_textureCache); // 创建纹理缓存
+        
+        self.loader = [[MTKTextureLoader alloc] initWithDevice:self.mtlDevice];
     }
     return self;
 }
@@ -61,7 +68,7 @@ static const float vertexArrayData[] = {
 {
     dispatch_semaphore_wait(self.renderSemaphore, DISPATCH_TIME_FOREVER);
     id<CAMetalDrawable> drawable = [(CAMetalLayer*)[self.mtlView layer] nextDrawable]; // 获取下一个可用的内容区缓存，用于绘制内容
-    if (!drawable) {
+    if (!drawable || !self.originalTexture || !self.lutTexture) {
         dispatch_semaphore_signal(self.renderSemaphore);
         return;
     }
@@ -90,12 +97,13 @@ static const float vertexArrayData[] = {
 
 - (void)loadLUTImage:(UIImage *)lutImage
 {
-    MTKTextureLoader *loader = [[MTKTextureLoader alloc] initWithDevice:self.mtlDevice];
+    dispatch_semaphore_wait(self.renderSemaphore, DISPATCH_TIME_FOREVER);
     NSError* err;
     unsigned char *imageBytes = [self bitmapFromImage:lutImage];
     NSData *imageData = [self imageDataFromBitmap:imageBytes imageSize:CGSizeMake(CGImageGetWidth(lutImage.CGImage), CGImageGetHeight(lutImage.CGImage))];
     free(imageBytes);
-    self.lutTexture = [loader newTextureWithData:imageData options:@{MTKTextureLoaderOptionSRGB:@(NO)} error:&err]; // 生成 LUT 滤镜纹理
+    self.lutTexture = [self.loader newTextureWithData:imageData options:@{MTKTextureLoaderOptionSRGB:@(NO)} error:&err]; // 生成 LUT 滤镜纹理
+    dispatch_semaphore_signal(self.renderSemaphore);
 }
 
 - (void)loadOriginalImage:(UIImage *)originalImage
@@ -103,9 +111,29 @@ static const float vertexArrayData[] = {
     unsigned char *imageBytes = [self bitmapFromImage:originalImage];
     NSData *imageData = [self imageDataFromBitmap:imageBytes imageSize:CGSizeMake(CGImageGetWidth(originalImage.CGImage), CGImageGetHeight(originalImage.CGImage))];
     free(imageBytes);
-    MTKTextureLoader *loader = [[MTKTextureLoader alloc] initWithDevice:self.mtlDevice];
     NSError* err;
-    self.originalTexture = [loader newTextureWithData:imageData options:@{MTKTextureLoaderOptionSRGB:@(NO)} error:&err];
+    self.originalTexture = [self.loader newTextureWithData:imageData options:@{MTKTextureLoaderOptionSRGB:@(NO)} error:&err];
+}
+
+- (void)loadPixelBuffer:(CVPixelBufferRef)pixelBuffer
+{
+    dispatch_semaphore_wait(self.renderSemaphore, DISPATCH_TIME_FOREVER);
+    size_t width = CVPixelBufferGetWidth(pixelBuffer);
+    size_t height = CVPixelBufferGetHeight(pixelBuffer);
+    
+    CVMetalTextureRef tmpTexture = NULL;
+    CVReturn status = CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, self.textureCache, pixelBuffer, NULL, MTLPixelFormatBGRA8Unorm, width, height, 0, &tmpTexture); // 这里格式注意与传入视频的格式要一致
+    id<MTLTexture> texture = nil;
+    if (status == kCVReturnSuccess) {
+        self.mtlView.drawableSize = CGSizeMake(width, height);
+        texture = CVMetalTextureGetTexture(tmpTexture);
+        self.originalTexture = texture;
+        CFRelease(tmpTexture);
+        dispatch_semaphore_signal(self.renderSemaphore);
+    } else {
+        dispatch_semaphore_signal(self.renderSemaphore);
+        return;
+    }
 }
 
 - (unsigned char *)bitmapFromImage:(UIImage *)targetImage

@@ -17,6 +17,7 @@
 
 - (void)loadLUTImage:(UIImage *)lutImage;
 - (void)loadOriginalImage:(UIImage *)originalImage;
+- (void)loadPixelBuffer:(CVPixelBufferRef)pixelBuffer;
 - (void)renderImage;
 
 @end
