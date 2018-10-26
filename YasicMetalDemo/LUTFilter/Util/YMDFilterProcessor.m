@@ -67,7 +67,8 @@ static const float vertexArrayData[] = {
 - (void)renderImage
 {
     dispatch_semaphore_wait(self.renderSemaphore, DISPATCH_TIME_FOREVER);
-    id<CAMetalDrawable> drawable = [(CAMetalLayer*)[self.mtlView layer] nextDrawable]; // 获取下一个可用的内容区缓存，用于绘制内容
+    id<CAMetalDrawable> drawable = [self.mtlView currentDrawable];
+//    id<CAMetalDrawable> drawable = [(CAMetalLayer*)[self.mtlView layer] nextDrawable]; // 获取下一个可用的内容区缓存，用于绘制内容
     if (!drawable || !self.originalTexture || !self.lutTexture) {
         dispatch_semaphore_signal(self.renderSemaphore);
         return;

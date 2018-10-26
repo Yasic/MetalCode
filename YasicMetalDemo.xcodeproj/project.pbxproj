@@ -18,6 +18,8 @@
 		74A99F9F215B38DC000881C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A99F9E215B38DC000881C3 /* Assets.xcassets */; };
 		74A99FA2215B38DC000881C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A99FA0215B38DC000881C3 /* LaunchScreen.storyboard */; };
 		74A99FA5215B38DC000881C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A99FA4215B38DC000881C3 /* main.m */; };
+		74B261A42180273000D83118 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B261A32180273000D83118 /* TestViewController.m */; };
+		74B261A62180521400D83118 /* LearnShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74B261A52180521400D83118 /* LearnShaders.metal */; };
 		ECF69B02C516D217981B0E2D /* libPods-YasicMetalDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C0BF3B7AE62BFCC26FD2DD /* libPods-YasicMetalDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,9 @@
 		74A99FA1215B38DC000881C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74A99FA3215B38DC000881C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A99FA4215B38DC000881C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		74B261A22180273000D83118 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		74B261A32180273000D83118 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		74B261A52180521400D83118 /* LearnShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = LearnShaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				745ADD5A215CE31B005CAC69 /* Shaders.metal */,
+				74B261A52180521400D83118 /* LearnShaders.metal */,
 			);
 			path = MetalShader;
 			sourceTree = "<group>";
@@ -125,6 +131,7 @@
 		74A99F94215B38DB000881C3 /* YasicMetalDemo */ = {
 			isa = PBXGroup;
 			children = (
+				74B261A1218026D600D83118 /* Begining */,
 				745ADD58215CE31B005CAC69 /* Resource */,
 				745ADD48215CCB2D005CAC69 /* LUTFilter */,
 				74A99F95215B38DB000881C3 /* AppDelegate.h */,
@@ -139,6 +146,15 @@
 				745ADD54215CE024005CAC69 /* YMDMacros.h */,
 			);
 			path = YasicMetalDemo;
+			sourceTree = "<group>";
+		};
+		74B261A1218026D600D83118 /* Begining */ = {
+			isa = PBXGroup;
+			children = (
+				74B261A22180273000D83118 /* TestViewController.h */,
+				74B261A32180273000D83118 /* TestViewController.m */,
+			);
+			path = Begining;
 			sourceTree = "<group>";
 		};
 		9FBC659E1D3EFAF5D8B47835 /* Frameworks */ = {
@@ -281,11 +297,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A99F9A215B38DB000881C3 /* ViewController.m in Sources */,
+				74B261A62180521400D83118 /* LearnShaders.metal in Sources */,
 				745ADD5B215CE31B005CAC69 /* Shaders.metal in Sources */,
 				745ADD53215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m in Sources */,
 				74A99FA5215B38DC000881C3 /* main.m in Sources */,
 				745ADD57215CE0B4005CAC69 /* YMDFilterProcessor.m in Sources */,
 				74A99F97215B38DB000881C3 /* AppDelegate.m in Sources */,
+				74B261A42180273000D83118 /* TestViewController.m in Sources */,
 				745ADD50215CCB90005CAC69 /* YMDImageLUTFilterPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

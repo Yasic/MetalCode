@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "YMDImageLUTFilterPage.h"
 #import "YMDVideoLUTFilterPage.h"
+#import "TestViewController.h"
 
 @interface ViewController ()
 
@@ -23,7 +24,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    YMDVideoLUTFilterPage *imagePage = [[YMDVideoLUTFilterPage alloc] init];
+    TestViewController *imagePage = [[TestViewController alloc] init];
     [self.navigationController pushViewController:imagePage animated:NO];
 }
 
