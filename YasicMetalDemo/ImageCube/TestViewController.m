@@ -139,8 +139,8 @@ static const Vertex vertex_data[] = {
     }];
     
     id<MTLLibrary> library = [self.mtlDevice newDefaultLibraryWithBundle:[NSBundle mainBundle] error:nil];
-    id<MTLFunction> vertextFunc = [library newFunctionWithName:@"my_vertex_func"];
-    id<MTLFunction> fragFunc = [library newFunctionWithName:@"my_fragment_func"];
+    id<MTLFunction> vertextFunc = [library newFunctionWithName:@"cube_image_vertex_func"];
+    id<MTLFunction> fragFunc = [library newFunctionWithName:@"cube_image_fragment_func"];
     MTLRenderPipelineDescriptor *renderPipelineDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
     renderPipelineDescriptor.vertexFunction = vertextFunc;
     renderPipelineDescriptor.fragmentFunction = fragFunc;
