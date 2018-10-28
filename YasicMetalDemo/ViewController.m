@@ -11,6 +11,7 @@
 #import "YMDVideoLUTFilterPage.h"
 #import "TestViewController.h"
 #import "YMDComputeKernelPage.h"
+#import "YMDLightDemoPage.h"
 #import <Masonry.h>
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -29,7 +30,8 @@
     self.demoNameList = @[@{@"pageName":@"图片滤镜", @"selector":@"pushImageLutPage"},
                           @{@"pageName":@"视频滤镜", @"selector":@"pushVideoLutPage"},
                           @{@"pageName":@"图片立方体", @"selector":@"pushCubeImage"},
-                          @{@"pageName":@"计算内核", @"selector":@"pushComputeKernel"}];
+                          @{@"pageName":@"计算内核", @"selector":@"pushComputeKernel"},
+                          @{@"pageName":@"光照效果", @"selector":@"pushLightDemo"}];
 }
 
 - (void)addViews
@@ -63,6 +65,12 @@
 - (void)pushComputeKernel
 {
     YMDComputeKernelPage *page = [[YMDComputeKernelPage alloc] init];
+    [self.navigationController pushViewController:page animated:NO];
+}
+
+- (void)pushLightDemo
+{
+    YMDLightDemoPage *page = [[YMDLightDemoPage alloc] init];
     [self.navigationController pushViewController:page animated:NO];
 }
 

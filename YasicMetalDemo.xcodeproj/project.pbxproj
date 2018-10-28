@@ -22,6 +22,8 @@
 		74B261A62180521400D83118 /* LearnShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74B261A52180521400D83118 /* LearnShaders.metal */; };
 		74F33BD92183370E000F28B2 /* YMDComputeKernelPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F33BD82183370E000F28B2 /* YMDComputeKernelPage.m */; };
 		74F33BDB218337B2000F28B2 /* ComputeKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74F33BDA218337B2000F28B2 /* ComputeKernel.metal */; };
+		74F33BDF2185F693000F28B2 /* YMDLightDemoPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F33BDE2185F693000F28B2 /* YMDLightDemoPage.m */; };
+		74F33BE12185F6E9000F28B2 /* LightKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74F33BE02185F6E9000F28B2 /* LightKernel.metal */; };
 		ECF69B02C516D217981B0E2D /* libPods-YasicMetalDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C0BF3B7AE62BFCC26FD2DD /* libPods-YasicMetalDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,9 @@
 		74F33BD72183370E000F28B2 /* YMDComputeKernelPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMDComputeKernelPage.h; sourceTree = "<group>"; };
 		74F33BD82183370E000F28B2 /* YMDComputeKernelPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMDComputeKernelPage.m; sourceTree = "<group>"; };
 		74F33BDA218337B2000F28B2 /* ComputeKernel.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ComputeKernel.metal; sourceTree = "<group>"; };
+		74F33BDD2185F693000F28B2 /* YMDLightDemoPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMDLightDemoPage.h; sourceTree = "<group>"; };
+		74F33BDE2185F693000F28B2 /* YMDLightDemoPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMDLightDemoPage.m; sourceTree = "<group>"; };
+		74F33BE02185F6E9000F28B2 /* LightKernel.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = LightKernel.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,7 @@
 				745ADD5A215CE31B005CAC69 /* Shaders.metal */,
 				74B261A52180521400D83118 /* LearnShaders.metal */,
 				74F33BDA218337B2000F28B2 /* ComputeKernel.metal */,
+				74F33BE02185F6E9000F28B2 /* LightKernel.metal */,
 			);
 			path = MetalShader;
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 		74A99F94215B38DB000881C3 /* YasicMetalDemo */ = {
 			isa = PBXGroup;
 			children = (
+				74F33BDC2185F67C000F28B2 /* Light */,
 				74F33BD6218336C4000F28B2 /* Compute */,
 				74B261A1218026D600D83118 /* ImageCube */,
 				745ADD58215CE31B005CAC69 /* Resource */,
@@ -171,6 +178,15 @@
 				74F33BD82183370E000F28B2 /* YMDComputeKernelPage.m */,
 			);
 			path = Compute;
+			sourceTree = "<group>";
+		};
+		74F33BDC2185F67C000F28B2 /* Light */ = {
+			isa = PBXGroup;
+			children = (
+				74F33BDD2185F693000F28B2 /* YMDLightDemoPage.h */,
+				74F33BDE2185F693000F28B2 /* YMDLightDemoPage.m */,
+			);
+			path = Light;
 			sourceTree = "<group>";
 		};
 		9FBC659E1D3EFAF5D8B47835 /* Frameworks */ = {
@@ -313,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A99F9A215B38DB000881C3 /* ViewController.m in Sources */,
+				74F33BDF2185F693000F28B2 /* YMDLightDemoPage.m in Sources */,
 				74B261A62180521400D83118 /* LearnShaders.metal in Sources */,
 				745ADD5B215CE31B005CAC69 /* Shaders.metal in Sources */,
 				745ADD53215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m in Sources */,
@@ -323,6 +340,7 @@
 				74A99F97215B38DB000881C3 /* AppDelegate.m in Sources */,
 				74B261A42180273000D83118 /* TestViewController.m in Sources */,
 				745ADD50215CCB90005CAC69 /* YMDImageLUTFilterPage.m in Sources */,
+				74F33BE12185F6E9000F28B2 /* LightKernel.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
