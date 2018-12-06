@@ -10,18 +10,38 @@
 #import <MetalKit/MTKTextureLoader.h>
 
 static const float vertexArrayData[] = {
+    // 左下角 0
     -1.0, -1.0, 0.0, 1.0, 0, 1,
+    // 左上角 1
     -1.0, 1.0, 0.0, 1.0, 0, 0,
+    // 右下角 2
     1.0, -1.0, 0.0, 1.0, 1, 1,
-    -1.0, 1.0, 0.0, 1.0, 0, 0,
+    // 左上角 1
+//    -1.0, 1.0, 0.0, 1.0, 0, 0,
+    // 右上角 3
     1.0, 1.0, 0.0, 1.0, 1, 0,
-    1.0, -1.0, 0.0, 1.0, 1, 1
+    // 右下角 2
+//    1.0, -1.0, 0.0, 1.0, 1, 1
+};
+
+// 顶点索引，Metal 按照此索引查询顶点数组对应下标，作为三角图元顶点
+static const uint16_t indices[] = {
+    0, 1, 2, 1, 3, 2
+};
+
+typedef struct {
+    float animatedBy;
+} Constants;
+
+static Constants constants = {
+    .animatedBy = 0
 };
 
 @interface YMDFilterProcessor()
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (nonatomic, strong) id<MTLBuffer> vertexBuffer; // 顶点缓存
+@property (nonatomic, strong) id<MTLBuffer> indicesBuffer; // 顶点索引缓存
 @property (nonatomic, strong) id <MTLRenderPipelineState> pipelineState; // 渲染管道状态描述位
 @property (nonatomic, strong) id <MTLCommandQueue> commandQueue;
 
@@ -31,6 +51,11 @@ static const float vertexArrayData[] = {
 
 @property (nonatomic, assign) CVMetalTextureCacheRef textureCache; // 纹理缓存
 @property (nonatomic, strong) MTKTextureLoader *loader; // 纹理加载器
+
+/**
+ 动画时间点
+ */
+@property (nonatomic, assign) double frameTime;
 
 @end
 
@@ -42,6 +67,7 @@ static const float vertexArrayData[] = {
     if (self){
         self.mtlDevice = MTLCreateSystemDefaultDevice(); // 获取 GPU 接口
         self.vertexBuffer = [self.mtlDevice newBufferWithBytes:vertexArrayData length:sizeof(vertexArrayData) options:0]; // 利用数组初始化一个顶点缓存，MTLResourceStorageModeShared 资源存储在CPU和GPU都可访问的系统存储器中
+        self.indicesBuffer = [self.mtlDevice newBufferWithBytes:indices length:sizeof(indices) options:0]; // 存储索引缓存
         
         id<MTLLibrary> library = [self.mtlDevice newDefaultLibraryWithBundle:[NSBundle mainBundle] error:nil];
         id<MTLFunction> vertextFunc = [library newFunctionWithName:@"vertex_func"];
@@ -68,7 +94,6 @@ static const float vertexArrayData[] = {
 {
     dispatch_semaphore_wait(self.renderSemaphore, DISPATCH_TIME_FOREVER);
     id<CAMetalDrawable> drawable = [self.mtlView currentDrawable];
-//    id<CAMetalDrawable> drawable = [(CAMetalLayer*)[self.mtlView layer] nextDrawable]; // 获取下一个可用的内容区缓存，用于绘制内容
     if (!drawable || !self.originalTexture || !self.lutTexture) {
         dispatch_semaphore_signal(self.renderSemaphore);
         return;
@@ -89,7 +114,14 @@ static const float vertexArrayData[] = {
     [commandEncoder setVertexBuffer:self.vertexBuffer offset:0 atIndex:0]; // 设置顶点buffer
     [commandEncoder setFragmentTexture:self.originalTexture atIndex:0]; // 设置纹理 0，即原图
     [commandEncoder setFragmentTexture:self.lutTexture atIndex:1]; // 设置纹理 1，即 LUT 图
-    [commandEncoder drawPrimitives:MTLPrimitiveTypeTriangle vertexStart:0 vertexCount:6]; // 绘制三角形图元
+    
+    // 写入动画参数常量
+    self.frameTime += 1/(double)(self.mtlView.preferredFramesPerSecond);
+    constants.animatedBy = ABS(sin(self.frameTime)/2 + 0.5); // 变化范围 [0, 1]
+    [commandEncoder setVertexBytes:&constants length:sizeof(Constants) atIndex:1];
+    
+    // 按照顶点索引绘制三角图元
+    [commandEncoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle indexCount:sizeof(indices)/sizeof(uint16_t) indexType:MTLIndexTypeUInt16 indexBuffer:self.indicesBuffer indexBufferOffset:0];
     [commandEncoder endEncoding];
     [commandBuffer presentDrawable:drawable];
     [commandBuffer commit];

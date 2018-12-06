@@ -12,6 +12,7 @@
 #import "TestViewController.h"
 #import "YMDComputeKernelPage.h"
 #import "YMDLightDemoPage.h"
+#import "VertexDescrpitorPage.h"
 #import <Masonry.h>
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -31,7 +32,8 @@
                           @{@"pageName":@"视频滤镜", @"selector":@"pushVideoLutPage"},
                           @{@"pageName":@"图片立方体", @"selector":@"pushCubeImage"},
                           @{@"pageName":@"计算内核", @"selector":@"pushComputeKernel"},
-                          @{@"pageName":@"光照效果", @"selector":@"pushLightDemo"}];
+                          @{@"pageName":@"光照效果", @"selector":@"pushLightDemo"},
+                          @{@"pageName":@"顶点描述符", @"selector":@"pushVDPage"}];
 }
 
 - (void)addViews
@@ -72,6 +74,12 @@
 {
     YMDLightDemoPage *page = [[YMDLightDemoPage alloc] init];
     [self.navigationController pushViewController:page animated:NO];
+}
+
+- (void)pushVDPage
+{
+    VertexDescrpitorPage *VDPage = [[VertexDescrpitorPage alloc] init];
+    [self.navigationController pushViewController:VDPage animated:NO];
 }
 
 #pragma mark tableView代理方法

@@ -165,7 +165,7 @@ static const Vertex vertex_data[] = {
 {
     MTLRenderPassDescriptor *renderPassDescriptor = [view currentRenderPassDescriptor];
     id <CAMetalDrawable> drawable = [view currentDrawable];
-    renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1, 1, 1, 1.0);
+    renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0, 0, 0, 1.0);
     id <MTLCommandBuffer> commandBuffer = [[self.mtlDevice newCommandQueue] commandBuffer];
     id <MTLRenderCommandEncoder> encoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
     [encoder setRenderPipelineState:self.pipelineState];
@@ -202,11 +202,11 @@ static const Vertex vertex_data[] = {
     self.scaleZ += self.diffScale;
     
     if (self.scaleX > 2) {
-        self.diffScale = -0.01;
+        self.diffScale = -0.001;
     }
     
     if (self.scaleX < 0.5) {
-        self.diffScale = 0.01;
+        self.diffScale = 0.001;
     }
     
     [self copyModelMatrix];

@@ -19,12 +19,18 @@ struct ColoredVertex
     float2 texCoords;
 };
 
-vertex ColoredVertex vertex_func(constant Vertex *vertices [[buffer(0)]], uint vid [[vertex_id]]) {
+struct Constants {
+    float animatedBy;
+};
+
+vertex ColoredVertex vertex_func(const device Vertex *vertices [[buffer(0)]],
+                                 constant Constants &constants [[buffer(1)]],
+                                 uint vid [[vertex_id]]) {
     Vertex inVertex = vertices[vid];
     ColoredVertex outVertex;
     outVertex.position = inVertex.position;
+    outVertex.position[1] += constants.animatedBy;
     outVertex.texCoords = inVertex.texCoords;
-    
     return outVertex;
 }
 
