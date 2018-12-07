@@ -13,6 +13,7 @@
 #import "YMDComputeKernelPage.h"
 #import "YMDLightDemoPage.h"
 #import "VertexDescrpitorPage.h"
+#import "SamplerDemoPage.h"
 #import <Masonry.h>
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -33,7 +34,8 @@
                           @{@"pageName":@"图片立方体", @"selector":@"pushCubeImage"},
                           @{@"pageName":@"计算内核", @"selector":@"pushComputeKernel"},
                           @{@"pageName":@"光照效果", @"selector":@"pushLightDemo"},
-                          @{@"pageName":@"顶点描述符", @"selector":@"pushVDPage"}];
+                          @{@"pageName":@"顶点描述符示例", @"selector":@"pushVDPage"},
+                          @{@"pageName":@"采样器示例", @"selector":@"pushSamplerDemoPage"}];
 }
 
 - (void)addViews
@@ -80,6 +82,12 @@
 {
     VertexDescrpitorPage *VDPage = [[VertexDescrpitorPage alloc] init];
     [self.navigationController pushViewController:VDPage animated:NO];
+}
+
+- (void)pushSamplerDemoPage
+{
+    SamplerDemoPage *page = [[SamplerDemoPage alloc] init];
+    [self.navigationController pushViewController:page animated:NO];
 }
 
 #pragma mark tableView代理方法
