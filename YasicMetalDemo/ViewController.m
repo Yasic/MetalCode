@@ -14,6 +14,7 @@
 #import "YMDLightDemoPage.h"
 #import "VertexDescrpitorPage.h"
 #import "SamplerDemoPage.h"
+#import "DepthStencilPage.h"
 #import <Masonry.h>
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -35,7 +36,8 @@
                           @{@"pageName":@"计算内核", @"selector":@"pushComputeKernel"},
                           @{@"pageName":@"光照效果", @"selector":@"pushLightDemo"},
                           @{@"pageName":@"顶点描述符示例", @"selector":@"pushVDPage"},
-                          @{@"pageName":@"采样器示例", @"selector":@"pushSamplerDemoPage"}];
+                          @{@"pageName":@"采样器示例", @"selector":@"pushSamplerDemoPage"},
+                          @{@"pageName":@"深度检测", @"selector":@"pushDepthStencilPage"}];
 }
 
 - (void)addViews
@@ -87,6 +89,12 @@
 - (void)pushSamplerDemoPage
 {
     SamplerDemoPage *page = [[SamplerDemoPage alloc] init];
+    [self.navigationController pushViewController:page animated:NO];
+}
+
+- (void)pushDepthStencilPage
+{
+    DepthStencilPage *page = [[DepthStencilPage alloc] init];
     [self.navigationController pushViewController:page animated:NO];
 }
 

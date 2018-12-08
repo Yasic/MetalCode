@@ -11,6 +11,8 @@
 		745030A221B8AFB0000BB235 /* VertexDescriptor.metal in Sources */ = {isa = PBXBuildFile; fileRef = 745030A121B8AFB0000BB235 /* VertexDescriptor.metal */; };
 		745030AA21B9FB56000BB235 /* SamplerDemoPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 745030A921B9FB56000BB235 /* SamplerDemoPage.m */; };
 		745030AC21BA0059000BB235 /* SamplerDemoShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 745030AB21BA0059000BB235 /* SamplerDemoShader.metal */; };
+		745030B021BA9D87000BB235 /* DepthStencilPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 745030AF21BA9D87000BB235 /* DepthStencilPage.m */; };
+		745030B221BBC602000BB235 /* DepthStencilShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 745030B121BBC602000BB235 /* DepthStencilShader.metal */; };
 		745ADD50215CCB90005CAC69 /* YMDImageLUTFilterPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD4F215CCB90005CAC69 /* YMDImageLUTFilterPage.m */; };
 		745ADD53215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD52215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m */; };
 		745ADD57215CE0B4005CAC69 /* YMDFilterProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD56215CE0B4005CAC69 /* YMDFilterProcessor.m */; };
@@ -41,6 +43,9 @@
 		745030A821B9FB56000BB235 /* SamplerDemoPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SamplerDemoPage.h; sourceTree = "<group>"; };
 		745030A921B9FB56000BB235 /* SamplerDemoPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SamplerDemoPage.m; sourceTree = "<group>"; };
 		745030AB21BA0059000BB235 /* SamplerDemoShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SamplerDemoShader.metal; sourceTree = "<group>"; };
+		745030AE21BA9D87000BB235 /* DepthStencilPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DepthStencilPage.h; sourceTree = "<group>"; };
+		745030AF21BA9D87000BB235 /* DepthStencilPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DepthStencilPage.m; sourceTree = "<group>"; };
+		745030B121BBC602000BB235 /* DepthStencilShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = DepthStencilShader.metal; sourceTree = "<group>"; };
 		745ADD4E215CCB90005CAC69 /* YMDImageLUTFilterPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMDImageLUTFilterPage.h; sourceTree = "<group>"; };
 		745ADD4F215CCB90005CAC69 /* YMDImageLUTFilterPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMDImageLUTFilterPage.m; sourceTree = "<group>"; };
 		745ADD51215CCBAA005CAC69 /* YMDVideoLUTFilterPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMDVideoLUTFilterPage.h; sourceTree = "<group>"; };
@@ -101,6 +106,15 @@
 			path = SamplerDemo;
 			sourceTree = "<group>";
 		};
+		745030AD21BA9D2F000BB235 /* DepthStencilPage */ = {
+			isa = PBXGroup;
+			children = (
+				745030AE21BA9D87000BB235 /* DepthStencilPage.h */,
+				745030AF21BA9D87000BB235 /* DepthStencilPage.m */,
+			);
+			path = DepthStencilPage;
+			sourceTree = "<group>";
+		};
 		745ADD48215CCB2D005CAC69 /* LUTFilter */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +162,7 @@
 				74F33BE02185F6E9000F28B2 /* LightKernel.metal */,
 				745030A121B8AFB0000BB235 /* VertexDescriptor.metal */,
 				745030AB21BA0059000BB235 /* SamplerDemoShader.metal */,
+				745030B121BBC602000BB235 /* DepthStencilShader.metal */,
 			);
 			path = MetalShader;
 			sourceTree = "<group>";
@@ -173,6 +188,7 @@
 		74A99F94215B38DB000881C3 /* YasicMetalDemo */ = {
 			isa = PBXGroup;
 			children = (
+				745030AD21BA9D2F000BB235 /* DepthStencilPage */,
 				745030A721B9FB3F000BB235 /* SamplerDemo */,
 				7450309D21B8ADE5000BB235 /* VertexDescriptor */,
 				74F33BDC2185F67C000F28B2 /* Light */,
@@ -369,12 +385,14 @@
 				745ADD53215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m in Sources */,
 				745030A021B8AEB7000BB235 /* VertexDescrpitorPage.m in Sources */,
 				74F33BD92183370E000F28B2 /* YMDComputeKernelPage.m in Sources */,
+				745030B221BBC602000BB235 /* DepthStencilShader.metal in Sources */,
 				74A99FA5215B38DC000881C3 /* main.m in Sources */,
 				74F33BDB218337B2000F28B2 /* ComputeKernel.metal in Sources */,
 				745ADD57215CE0B4005CAC69 /* YMDFilterProcessor.m in Sources */,
 				745030A221B8AFB0000BB235 /* VertexDescriptor.metal in Sources */,
 				74A99F97215B38DB000881C3 /* AppDelegate.m in Sources */,
 				74B261A42180273000D83118 /* TestViewController.m in Sources */,
+				745030B021BA9D87000BB235 /* DepthStencilPage.m in Sources */,
 				745ADD50215CCB90005CAC69 /* YMDImageLUTFilterPage.m in Sources */,
 				74F33BE12185F6E9000F28B2 /* LightKernel.metal in Sources */,
 			);

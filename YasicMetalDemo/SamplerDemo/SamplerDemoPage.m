@@ -73,6 +73,9 @@ static const uint16_t indices[] = {
  */
 @property (nonatomic, strong) id<MTLSamplerState> samplerState;
 
+@property (nonatomic, strong) UIButton *changeSamplerButton;
+@property (nonatomic, assign) BOOL isLinearMode;
+
 @end
 
 @implementation SamplerDemoPage
@@ -85,8 +88,16 @@ static const uint16_t indices[] = {
     [self p_loadTexture];
     [self p_setupSampler];
     [self.view addSubview:self.mtkView];
+    [self.view addSubview:self.changeSamplerButton];
     [self.mtkView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+        make.left.top.equalTo(self.view);
+        make.width.height.equalTo(self.view.mas_width);
+    }];
+    [self.changeSamplerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.view);
+        make.bottom.equalTo(self.view);
+        make.height.equalTo(@64);
     }];
 }
 
@@ -152,7 +163,7 @@ static const uint16_t indices[] = {
     // 缩小过滤器
     samplerDescriptor.minFilter = MDLMaterialTextureFilterModeLinear;
     // 放大过滤器，设置为 Linear 将会从临近像素进行混合得到当前像素值，也即插值操作，会导致二维码失真
-    samplerDescriptor.magFilter = MDLMaterialTextureFilterModeNearest;
+    samplerDescriptor.magFilter = self.isLinearMode ? MDLMaterialTextureFilterModeLinear : MDLMaterialTextureFilterModeNearest;
     self.samplerState = [self.mtlDevice newSamplerStateWithDescriptor:samplerDescriptor];
 }
 
@@ -208,6 +219,7 @@ static const uint16_t indices[] = {
 
 - (void)drawInMTKView:(MTKView *)view
 {
+    [self p_setupSampler];
     id<MTLDrawable> drawable = [view currentDrawable];
     MTLRenderPassDescriptor *renderPassDescriptor = [self.mtkView currentRenderPassDescriptor];
     if (!drawable || !renderPassDescriptor) {
@@ -242,6 +254,23 @@ static const uint16_t indices[] = {
         _mtkView.delegate = self;
     }
     return _mtkView;
+}
+
+- (UIButton *)changeSamplerButton
+{
+    if (!_changeSamplerButton) {
+        _changeSamplerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_changeSamplerButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_changeSamplerButton setTitle:@"线性插值已关闭" forState:UIControlStateNormal];
+        [_changeSamplerButton addTarget:self action:@selector(p_changeSamplerButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _changeSamplerButton;
+}
+
+- (void)p_changeSamplerButtonClicked
+{
+    self.isLinearMode = !self.isLinearMode;
+    [self.changeSamplerButton setTitle:self.isLinearMode ? @"线性插值已开启" : @"线性插值已关闭" forState:UIControlStateNormal];
 }
 
 @end
