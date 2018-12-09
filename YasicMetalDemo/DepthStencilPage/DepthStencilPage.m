@@ -233,21 +233,31 @@ typedef struct Uniforms {
     modelMatrix = GLKMatrix4RotateY(modelMatrix, GLKMathDegreesToRadians(self.rotationY));
     modelMatrix = GLKMatrix4RotateX(modelMatrix, GLKMathDegreesToRadians(self.rotationX));
     modelMatrix = GLKMatrix4Scale(modelMatrix, self.scaleX, self.scaleY, self.scaleZ);
+    GLKMatrix4 translation = GLKMatrix4Translate(GLKMatrix4Identity, self.positionX, self.positionY, self.positionZ);
+    modelMatrix = GLKMatrix4Multiply(translation, modelMatrix);
     
-    // 视图变换矩阵
-    GLKMatrix4 viewMatrix = GLKMatrix4Identity;
+    GLKVector3 eyePosition = GLKVector3Make(0, 0, 0.0f);
+    GLKVector3 lookAtPosition = GLKVector3Make(0, 0, -5);
+    GLKVector3 upVector = GLKVector3Make(0, 1, 0);
     // 旋转到左面观察两个立方体可看出两个立方体并不会相交，但是没有深度检测器的时候正面观察就会出现错位混叠现象
     if (self.isLeftView) {
-        viewMatrix = GLKMatrix4RotateY(viewMatrix, GLKMathDegreesToRadians(90));
-        viewMatrix = GLKMatrix4Translate(viewMatrix, 20, 0, 15);
+        eyePosition = GLKVector3Make(-20, 0, -15);
+        lookAtPosition = GLKVector3Make(0, 0, -15);
     }
-    viewMatrix = GLKMatrix4Translate(viewMatrix, self.positionX, self.positionY, self.positionZ);
-    
+    GLKMatrix4 cameraMatrix = GLKMatrix4MakeLookAt(eyePosition.x,
+                                                      eyePosition.y,
+                                                      eyePosition.z,
+                                                      lookAtPosition.x,
+                                                      lookAtPosition.y,
+                                                      lookAtPosition.z,
+                                                      upVector.x,
+                                                      upVector.y,
+                                                      upVector.z); // 模型变换矩阵
     GLKMatrix4 translationMatrix = GLKMatrix4Identity;
-    translationMatrix = GLKMatrix4Multiply(viewMatrix, modelMatrix);
+    translationMatrix = GLKMatrix4Multiply(cameraMatrix, modelMatrix);
     
     // 投影变换矩阵
-    GLKMatrix4 perspectiveMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.mtkView.frame.size.width/self.mtkView.frame.size.height, 0.01, 1000.0);
+    GLKMatrix4 perspectiveMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(75.0), self.mtkView.frame.size.width/self.mtkView.frame.size.height, 0.01, 1000.0);
     translationMatrix = GLKMatrix4Multiply(perspectiveMatrix, translationMatrix);
     
     Uniforms uniform = {.matrix = translationMatrix};
@@ -317,7 +327,7 @@ typedef struct Uniforms {
 {
     if (!_viewChangeButton) {
         _viewChangeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_viewChangeButton setTitle:@"正前方视角" forState:UIControlStateNormal];
+        [_viewChangeButton setTitle:@"切换到左侧视角" forState:UIControlStateNormal];
         [_viewChangeButton addTarget:self action:@selector(p_viewChangeButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         [_viewChangeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _viewChangeButton.layer.borderColor = [UIColor blueColor].CGColor;
@@ -342,7 +352,7 @@ typedef struct Uniforms {
 - (void)p_viewChangeButtonClicked
 {
     self.isLeftView = !self.isLeftView;
-    [self.viewChangeButton setTitle:self.isLeftView ? @"左侧视角" : @"正前方视角" forState:UIControlStateNormal];
+    [self.viewChangeButton setTitle:self.isLeftView ? @"切换到正前方视角" : @"切换到左侧视角" forState:UIControlStateNormal];
 }
 
 - (void)p_depthChangeButtonClicked
