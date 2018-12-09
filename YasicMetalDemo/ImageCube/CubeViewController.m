@@ -1,12 +1,12 @@
 //
-//  TestViewController.m
+//  CubeViewController.m
 //  YasicMetalDemo
 //
 //  Created by yasic on 2018/10/24.
 //  Copyright © 2018年 yasic. All rights reserved.
 //
 
-#import "TestViewController.h"
+#import "CubeViewController.h"
 #import <Masonry.h>
 #import <MetalKit/MetalKit.h>
 #import <GLKit/GLKit.h>
@@ -79,7 +79,7 @@ static const Vertex vertex_data[] = {
     {.pos = { -1, -1, -1.0,  1.0}, .coords = {0, 0}},
 };
 
-@interface TestViewController ()<MTKViewDelegate>
+@interface CubeViewController ()<MTKViewDelegate>
 
 @property (nonatomic, strong) id<MTLDevice> mtlDevice;
 @property (nonatomic, strong) MTKView *mtkView;
@@ -113,7 +113,7 @@ static const Vertex vertex_data[] = {
 
 @end
 
-@implementation TestViewController
+@implementation CubeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

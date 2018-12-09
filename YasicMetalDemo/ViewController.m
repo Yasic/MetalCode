@@ -7,14 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "YMDImageLUTFilterPage.h"
-#import "YMDVideoLUTFilterPage.h"
-#import "TestViewController.h"
-#import "YMDComputeKernelPage.h"
-#import "YMDLightDemoPage.h"
-#import "VertexDescrpitorPage.h"
-#import "SamplerDemoPage.h"
-#import "DepthStencilPage.h"
 #import <Masonry.h>
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -30,14 +22,14 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
     [self addViews];
-    self.demoNameList = @[@{@"pageName":@"图片滤镜", @"selector":@"pushImageLutPage"},
-                          @{@"pageName":@"视频滤镜", @"selector":@"pushVideoLutPage"},
-                          @{@"pageName":@"图片立方体", @"selector":@"pushCubeImage"},
-                          @{@"pageName":@"计算内核", @"selector":@"pushComputeKernel"},
-                          @{@"pageName":@"光照效果", @"selector":@"pushLightDemo"},
-                          @{@"pageName":@"顶点描述符示例", @"selector":@"pushVDPage"},
-                          @{@"pageName":@"采样器示例", @"selector":@"pushSamplerDemoPage"},
-                          @{@"pageName":@"深度检测", @"selector":@"pushDepthStencilPage"}];
+    self.demoNameList = @[@{@"pageName":@"图片滤镜", @"selector":@"YMDImageLUTFilterPage"},
+                          @{@"pageName":@"视频滤镜", @"selector":@"YMDVideoLUTFilterPage"},
+                          @{@"pageName":@"图片立方体", @"selector":@"CubeViewController"},
+                          @{@"pageName":@"计算内核", @"selector":@"YMDComputeKernelPage"},
+                          @{@"pageName":@"光照效果", @"selector":@"YMDLightDemoPage"},
+                          @{@"pageName":@"顶点描述符示例", @"selector":@"VertexDescrpitorPage"},
+                          @{@"pageName":@"采样器示例", @"selector":@"SamplerDemoPage"},
+                          @{@"pageName":@"深度检测", @"selector":@"DepthStencilPage"}];
 }
 
 - (void)addViews
@@ -46,56 +38,6 @@
     [self.demoListTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-}
-
-#pragma mark 点击事件
-
-- (void)pushImageLutPage
-{
-    YMDImageLUTFilterPage *page = [[YMDImageLUTFilterPage alloc] init];
-    [self.navigationController pushViewController:page animated:NO];
-}
-
-- (void)pushVideoLutPage
-{
-    YMDVideoLUTFilterPage *page = [[YMDVideoLUTFilterPage alloc] init];
-    [self.navigationController pushViewController:page animated:NO];
-}
-
-- (void)pushCubeImage
-{
-    TestViewController *page = [[TestViewController alloc] init];
-    [self.navigationController pushViewController:page animated:NO];
-}
-
-- (void)pushComputeKernel
-{
-    YMDComputeKernelPage *page = [[YMDComputeKernelPage alloc] init];
-    [self.navigationController pushViewController:page animated:NO];
-}
-
-- (void)pushLightDemo
-{
-    YMDLightDemoPage *page = [[YMDLightDemoPage alloc] init];
-    [self.navigationController pushViewController:page animated:NO];
-}
-
-- (void)pushVDPage
-{
-    VertexDescrpitorPage *VDPage = [[VertexDescrpitorPage alloc] init];
-    [self.navigationController pushViewController:VDPage animated:NO];
-}
-
-- (void)pushSamplerDemoPage
-{
-    SamplerDemoPage *page = [[SamplerDemoPage alloc] init];
-    [self.navigationController pushViewController:page animated:NO];
-}
-
-- (void)pushDepthStencilPage
-{
-    DepthStencilPage *page = [[DepthStencilPage alloc] init];
-    [self.navigationController pushViewController:page animated:NO];
 }
 
 #pragma mark tableView代理方法
@@ -118,10 +60,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSString *selector = self.demoNameList[indexPath.row][@"selector"];
-    if (![selector isEqualToString:@""]) {
-        [self performSelector:NSSelectorFromString(selector)];
-    }
+    NSString *viewControllerName = self.demoNameList[indexPath.row][@"selector"];
+    Class pageClass = NSClassFromString(viewControllerName);
+    UIViewController *page = [[pageClass alloc] init];
+    [self.navigationController pushViewController:page animated:NO];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

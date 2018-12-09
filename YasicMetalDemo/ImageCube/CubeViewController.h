@@ -1,5 +1,5 @@
 //
-//  TestViewController.h
+//  CubeViewController.h
 //  YasicMetalDemo
 //
 //  Created by yasic on 2018/10/24.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestViewController : UIViewController
+@interface CubeViewController : UIViewController
 
 @end
