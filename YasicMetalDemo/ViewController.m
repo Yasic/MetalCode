@@ -29,7 +29,9 @@
                           @{@"pageName":@"光照效果", @"selector":@"YMDLightDemoPage"},
                           @{@"pageName":@"顶点描述符示例", @"selector":@"VertexDescrpitorPage"},
                           @{@"pageName":@"采样器示例", @"selector":@"SamplerDemoPage"},
-                          @{@"pageName":@"深度检测", @"selector":@"DepthStencilPage"}];
+                          @{@"pageName":@"深度检测", @"selector":@"DepthStencilPage"},
+                          @{@"pageName":@"文字渲染", @"selector":@"TextRenderPage"},
+                          @{@"pageName":@"自定义MetalView", @"selector":@"CAMetalLayerPage"}];
 }
 
 - (void)addViews

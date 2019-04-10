@@ -8,6 +8,7 @@
 
 #import "YMDFilterProcessor.h"
 #import <MetalKit/MTKTextureLoader.h>
+#import <CoreVideo/CoreVideo.h>
 
 static const float vertexArrayData[] = {
     // 左下角 0
@@ -69,7 +70,7 @@ static Constants constants = {
         self.vertexBuffer = [self.mtlDevice newBufferWithBytes:vertexArrayData length:sizeof(vertexArrayData) options:0]; // 利用数组初始化一个顶点缓存，MTLResourceStorageModeShared 资源存储在CPU和GPU都可访问的系统存储器中
         self.indicesBuffer = [self.mtlDevice newBufferWithBytes:indices length:sizeof(indices) options:0]; // 存储索引缓存
         
-        id<MTLLibrary> library = [self.mtlDevice newDefaultLibraryWithBundle:[NSBundle mainBundle] error:nil];
+        id<MTLLibrary> library = [self.mtlDevice newDefaultLibrary];
         id<MTLFunction> vertextFunc = [library newFunctionWithName:@"vertex_func"];
         id<MTLFunction> fragFunc = [library newFunctionWithName:@"fragment_func"]; //从 bundle 中获取顶点着色器和片段着色器
         

@@ -42,7 +42,7 @@
 //        make.width.height.mas_equalTo([UIScreen mainScreen].bounds.size.width);
     }];
     
-    id<MTLLibrary> library = [self.mtlDevice newDefaultLibraryWithBundle:[NSBundle mainBundle] error:nil];
+    id<MTLLibrary> library = [self.mtlDevice newDefaultLibrary];
     id<MTLFunction> computeFunc = [library newFunctionWithName:@"kernelComputeFunc"];
     self.computePipelineState = [self.mtlDevice newComputePipelineStateWithFunction:computeFunc error:nil];
 }

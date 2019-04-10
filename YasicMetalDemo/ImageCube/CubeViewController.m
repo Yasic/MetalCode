@@ -138,7 +138,7 @@ static const Vertex vertex_data[] = {
         make.edges.equalTo(self.view);
     }];
     
-    id<MTLLibrary> library = [self.mtlDevice newDefaultLibraryWithBundle:[NSBundle mainBundle] error:nil];
+    id<MTLLibrary> library = [self.mtlDevice newDefaultLibrary];
     id<MTLFunction> vertextFunc = [library newFunctionWithName:@"cube_image_vertex_func"];
     id<MTLFunction> fragFunc = [library newFunctionWithName:@"cube_image_fragment_func"];
     MTLRenderPipelineDescriptor *renderPipelineDescriptor = [[MTLRenderPipelineDescriptor alloc] init];

@@ -160,7 +160,7 @@ typedef struct Uniforms {
     self.mtlDevice = MTLCreateSystemDefaultDevice();
     self.commandQueue = [self.mtlDevice newCommandQueue];
     
-    id<MTLLibrary> library = [self.mtlDevice newDefaultLibraryWithBundle:[NSBundle mainBundle] error:nil];
+    id<MTLLibrary> library = [self.mtlDevice newDefaultLibrary];
     
     MTLRenderPipelineDescriptor *renderPipeLineDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
     id<MTLFunction> vertextFunc = [library newFunctionWithName:@"ds_vertex_func"];

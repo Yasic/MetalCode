@@ -109,7 +109,7 @@ static const uint16_t indices[] = {
     self.mtlDevice = MTLCreateSystemDefaultDevice();
     self.commandQueue = [self.mtlDevice newCommandQueue];
     
-    id<MTLLibrary> library = [self.mtlDevice newDefaultLibraryWithBundle:[NSBundle mainBundle] error:nil];
+    id<MTLLibrary> library = [self.mtlDevice newDefaultLibrary];
     
     MTLRenderPipelineDescriptor *renderPipeLineDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
     id<MTLFunction> vertextFunc = [library newFunctionWithName:@"sd_vertex_func"];

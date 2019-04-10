@@ -81,7 +81,7 @@ static const uint16_t indices[] = {
         make.edges.equalTo(self.view);
     }];
     
-    id<MTLLibrary> library = [self.mtlDevice newDefaultLibraryWithBundle:[NSBundle mainBundle] error:nil];
+    id<MTLLibrary> library = [self.mtlDevice newDefaultLibrary];
     id<MTLFunction> vertextFunc = [library newFunctionWithName:@"vd_vertex_func"];
     id<MTLFunction> fragFunc = [library newFunctionWithName:@"vd_fragment_func"];
     MTLRenderPipelineDescriptor *renderPipelineDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
