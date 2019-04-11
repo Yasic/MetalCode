@@ -7,13 +7,8 @@
 //
 
 #include <metal_stdlib>
+#import "YMMetalDefine.h"
 using namespace metal;
-
-struct YMStandardSingleInputVertexIO
-{
-    float4 position [[position]];
-    float2 textureCoordinate [[user(texturecoord)]];
-};
 
 typedef struct
 {

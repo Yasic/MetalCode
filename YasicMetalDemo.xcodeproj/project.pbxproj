@@ -104,6 +104,7 @@
 		745ADD5A215CE31B005CAC69 /* ImageFilterShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ImageFilterShaders.metal; sourceTree = "<group>"; };
 		745ADD61216B069F005CAC69 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		7477B3AF225ED6E400BBA623 /* YMToonOperation.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = YMToonOperation.metal; sourceTree = "<group>"; };
+		7477B3B8225F5F1A00BBA623 /* YMMetalDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMMetalDefine.h; sourceTree = "<group>"; };
 		747BA33A225DD88D00CCD323 /* YMLUTFilterOperationShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = YMLUTFilterOperationShader.metal; sourceTree = "<group>"; };
 		74A008072254CD1E004466D1 /* YMTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMTexture.h; sourceTree = "<group>"; };
 		74A008082254CD1E004466D1 /* YMTexture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMTexture.m; sourceTree = "<group>"; };
@@ -181,6 +182,7 @@
 		7443F5E3225C598B00E6D125 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				7477B3B8225F5F1A00BBA623 /* YMMetalDefine.h */,
 				7401BEBF22559213005A40F2 /* YMBasicOperation.h */,
 				7401BEC022559213005A40F2 /* YMBasicOperation.m */,
 				7443F5E7225CAE7C00E6D125 /* YMLUTFilterOperation.h */,
@@ -724,16 +726,39 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WY956BMK34;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactiveObjC\"",
+				);
 				INFOPLIST_FILE = YasicMetalDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Masonry\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/ReactiveObjC\"",
+				);
+				MTL_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/YasicMetalDemo/Core/Operations";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Masonry\"",
+					"-l\"ReactiveObjC\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = developer.technology.MetalDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -745,16 +770,34 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WY956BMK34;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactiveObjC\"",
+				);
 				INFOPLIST_FILE = YasicMetalDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTL_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/YasicMetalDemo/Core/Operations";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Masonry\"",
+					"-l\"ReactiveObjC\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = developer.technology.MetalDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

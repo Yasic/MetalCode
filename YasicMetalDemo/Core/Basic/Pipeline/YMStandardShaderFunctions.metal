@@ -7,13 +7,8 @@
 //
 
 #include <metal_stdlib>
+#import "YMMetalDefine.h"
 using namespace metal;
-
-struct YMStandardSingleInputVertexIO
-{
-    float4 position [[position]];
-    float2 textureCoordinate [[user(texturecoord)]];
-};
 
 vertex YMStandardSingleInputVertexIO standardSingleInputVertex(device packed_float4 *position [[buffer(0)]],
 device packed_float2 *texturecoord [[buffer(1)]], uint vid [[vertex_id]])

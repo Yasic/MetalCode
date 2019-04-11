@@ -7,7 +7,7 @@
 //
 
 #include <metal_stdlib>
-
+#import "YMMetalDefine.h"
 using namespace metal;
 
 typedef struct
@@ -15,8 +15,6 @@ typedef struct
     float magTol;
     float quantize;
 } ZoomBlurUniform;
-
-constant half3 luminanceWeighting = half3(0.2125, 0.7154, 0.0721);
 
 fragment half4 standardToonFragment(YMStandardSingleInputVertexIO fragmentInput [[stage_in]],
                             texture2d<half> inputTexture [[texture(0)]],
