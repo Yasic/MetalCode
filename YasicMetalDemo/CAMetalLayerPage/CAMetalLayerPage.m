@@ -11,8 +11,12 @@
 #import <Masonry.h>
 #import "YMTextureOutput.h"
 #import "YMTextureInput.h"
-#import "YMLUTFilterOperation.h"
 #import "YMConstants.h"
+#import "YMLUTFilterOperation.h"
+#import "YMSaturationOperation.h"
+#import "YMBrightnessOperation.h"
+#import "YMZoomBlurOperation.h"
+#import "YMToonOperation.h"
 
 @interface CAMetalLayerPage ()
 
@@ -30,8 +34,7 @@
 
 @property (nonatomic, assign) float intensity;
 @property (nonatomic, assign) float offset;
-@property (nonatomic, strong) YMLUTFilterOperation *lutOperation1;
-@property (nonatomic, strong) YMLUTFilterOperation *lutOperation2;
+@property (nonatomic, strong) YMToonOperation *operation;
 
 @end
 
@@ -45,12 +48,10 @@
         make.top.equalTo(self.mas_topLayoutGuideBottom);
         make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
     }];
-    self.textureInput = [[YMTextureInput alloc] initWithUIImage:[UIImage imageNamed:@"FilterTargetImage"]];
-    self.lutOperation1 = [[YMLUTFilterOperation alloc] initWithLUTImage:[UIImage imageNamed:@"lookup_003"]];
-    self.lutOperation2 = [[YMLUTFilterOperation alloc] initWithLUTImage:[UIImage imageNamed:@"lookup_001"]];
-    self.textureInput.imageOutput = self.lutOperation1;
-    self.lutOperation1.imageOutput = self.lutOperation2;
-    self.lutOperation2.imageOutput = self.outputView;
+    self.textureInput = [[YMTextureInput alloc] initWithUIImage:[UIImage imageNamed:@"DogLogo"]];
+    self.operation = [[YMToonOperation alloc] init];
+    self.textureInput.imageOutput = self.operation;
+    self.operation.imageOutput = self.outputView;
     [self.textureInput processTexture];
     [self addSliderWithIndex:0];
     [self addSliderWithIndex:1];
@@ -59,17 +60,22 @@
 - (void)addSliderWithIndex:(NSInteger)index
 {
     UISlider *slider = [[UISlider alloc] initWithFrame:CGRectZero];
-    slider.tag = index;
     [self.view addSubview:slider];
-    slider.minimumValue = 0.0;
-    slider.maximumValue = 1.0;
+    slider.tag = index;
+    if (index == 0) {
+        slider.minimumValue = 0;
+        slider.maximumValue = 1.0;
+    } else {
+        slider.minimumValue = 0;
+        slider.maximumValue = 20;
+    }
     slider.value = 0.0;
     slider.continuous = YES;
     [slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     [slider mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(50);
         make.right.equalTo(self.view).offset(-50);
-        make.bottom.equalTo(self.mas_bottomLayoutGuideTop).offset(-45 * index - 20);
+        make.bottom.equalTo(self.mas_bottomLayoutGuideTop).offset(-45 + index * 20);
         make.height.equalTo(@(32));
     }];
 }
@@ -77,14 +83,10 @@
 - (void)sliderValueChanged:(id)sender
 {
     UISlider *slider = (UISlider *)sender;
-    switch (slider.tag) {
-        case 0: {
-            self.lutOperation1.intensity = slider.value;
-        }
-            break;
-        default:
-            self.lutOperation2.intensity = slider.value;
-            break;
+    if (slider.tag == 0) {
+        self.operation.magTol = slider.value;
+    } else {
+        self.operation.quantize = slider.value;
     }
     [self.textureInput processTexture];
 }

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "YMPipeline.h"
+#import "YMMetalContext.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

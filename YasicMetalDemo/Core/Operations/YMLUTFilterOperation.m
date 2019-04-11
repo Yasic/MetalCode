@@ -7,15 +7,6 @@
 //
 
 #import "YMLUTFilterOperation.h"
-#import "YMConstants.h"
-
-typedef struct {
-    float intensity;
-} Constants;
-
-Constants constants = {
-    .intensity = 0.0
-};
 
 @interface YMLUTFilterOperation()
 
@@ -43,8 +34,10 @@ Constants constants = {
 
 - (void)setIntensity:(float)intensity
 {
-    constants.intensity = intensity;
-    id<MTLBuffer> vertexBuffer = [[YMMetalContext shareContext].device newBufferWithBytes:&constants length:sizeof(constants) options:0];
+    intensity = intensity < 0 ? 0 : intensity;
+    intensity = intensity > 1.0 ? 1.0 : intensity;
+    _intensity = intensity;
+    id<MTLBuffer> vertexBuffer = [[YMMetalContext shareContext].device newBufferWithBytes:&intensity length:sizeof(float) options:0];
     self.inputFragmentBuffers = [@[vertexBuffer] mutableCopy];
 }
 

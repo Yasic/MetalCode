@@ -23,7 +23,7 @@ typedef struct
 fragment half4 standardLUTFragment(YMStandardSingleInputVertexIO fragmentInput [[stage_in]],
                                    texture2d<half> originalTexture [[texture(0)]],
                                    texture2d<half> lutTexture [[texture(1)]],
-                                   constant Constants &constants [[buffer(0)]]
+                                   constant float &constants [[buffer(0)]]
                                    )
 {
     float width = originalTexture.get_width();
@@ -54,7 +54,7 @@ fragment half4 standardLUTFragment(YMStandardSingleInputVertexIO fragmentInput [
     half4 newColor2 = lutTexture.read(uint2(texPos2.x * 512,texPos2.y * 512));
     
     half4 newColor = mix(newColor1, newColor2, half(fract(blueColor)));
-    half4 finalColor = mix(color, half4(newColor.rgb, 1.0), half(constants.intensity));
+    half4 finalColor = mix(color, half4(newColor.rgb, 1.0), half(constants));
 
     return finalColor;
 }

@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		7401BEC122559213005A40F2 /* YMBasicOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7401BEC022559213005A40F2 /* YMBasicOperation.m */; };
 		7401BEC322559421005A40F2 /* YMStandardShaderFunctions.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7401BEC222559421005A40F2 /* YMStandardShaderFunctions.metal */; };
+		74036C4B225EC51200AD1F63 /* YMSaturationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74036C4A225EC51200AD1F63 /* YMSaturationOperation.m */; };
+		74036C4D225EC52600AD1F63 /* YMSaturationShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74036C4C225EC52600AD1F63 /* YMSaturationShader.metal */; };
+		74036C50225ECB6900AD1F63 /* YMBrightnessOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74036C4F225ECB6900AD1F63 /* YMBrightnessOperation.m */; };
+		74036C52225ECB7A00AD1F63 /* YMBrightnessShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74036C51225ECB7A00AD1F63 /* YMBrightnessShader.metal */; };
+		74036C55225ED19B00AD1F63 /* YMZoomBlurOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74036C54225ED19B00AD1F63 /* YMZoomBlurOperation.m */; };
+		74036C57225ED20900AD1F63 /* YMZoomBlurShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74036C56225ED20900AD1F63 /* YMZoomBlurShader.metal */; };
+		74036C5A225ED48E00AD1F63 /* YMToonOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74036C59225ED48E00AD1F63 /* YMToonOperation.m */; };
 		74366F5A222E96C7004A8916 /* TextRenderPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 74366F59222E96C7004A8916 /* TextRenderPage.m */; };
 		74366F5D2230EF67004A8916 /* GlyphInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 74366F5C2230EF67004A8916 /* GlyphInfo.m */; };
 		7443F5DE225C2F1A00E6D125 /* YMTextureInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 7443F5DD225C2F1A00E6D125 /* YMTextureInput.m */; };
@@ -26,6 +33,7 @@
 		745ADD57215CE0B4005CAC69 /* YMDFilterProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD56215CE0B4005CAC69 /* YMDFilterProcessor.m */; };
 		745ADD5B215CE31B005CAC69 /* ImageFilterShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD5A215CE31B005CAC69 /* ImageFilterShaders.metal */; };
 		745ADD62216B06A0005CAC69 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 745ADD61216B069F005CAC69 /* video.mp4 */; };
+		7477B3B0225ED6E400BBA623 /* YMToonOperation.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7477B3AF225ED6E400BBA623 /* YMToonOperation.metal */; };
 		747BA33B225DD88E00CCD323 /* YMLUTFilterOperationShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 747BA33A225DD88D00CCD323 /* YMLUTFilterOperationShader.metal */; };
 		74A008092254CD1E004466D1 /* YMTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A008082254CD1E004466D1 /* YMTexture.m */; };
 		74A0080C2254CE1C004466D1 /* YMMetalContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A0080B2254CE1C004466D1 /* YMMetalContext.m */; };
@@ -54,6 +62,17 @@
 		7401BEBF22559213005A40F2 /* YMBasicOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMBasicOperation.h; sourceTree = "<group>"; };
 		7401BEC022559213005A40F2 /* YMBasicOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMBasicOperation.m; sourceTree = "<group>"; };
 		7401BEC222559421005A40F2 /* YMStandardShaderFunctions.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = YMStandardShaderFunctions.metal; sourceTree = "<group>"; };
+		74036C49225EC51200AD1F63 /* YMSaturationOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMSaturationOperation.h; sourceTree = "<group>"; };
+		74036C4A225EC51200AD1F63 /* YMSaturationOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMSaturationOperation.m; sourceTree = "<group>"; };
+		74036C4C225EC52600AD1F63 /* YMSaturationShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = YMSaturationShader.metal; sourceTree = "<group>"; };
+		74036C4E225ECB6900AD1F63 /* YMBrightnessOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMBrightnessOperation.h; sourceTree = "<group>"; };
+		74036C4F225ECB6900AD1F63 /* YMBrightnessOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMBrightnessOperation.m; sourceTree = "<group>"; };
+		74036C51225ECB7A00AD1F63 /* YMBrightnessShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = YMBrightnessShader.metal; sourceTree = "<group>"; };
+		74036C53225ED19B00AD1F63 /* YMZoomBlurOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZoomBlurOperation.h; sourceTree = "<group>"; };
+		74036C54225ED19B00AD1F63 /* YMZoomBlurOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZoomBlurOperation.m; sourceTree = "<group>"; };
+		74036C56225ED20900AD1F63 /* YMZoomBlurShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = YMZoomBlurShader.metal; sourceTree = "<group>"; };
+		74036C58225ED48E00AD1F63 /* YMToonOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMToonOperation.h; sourceTree = "<group>"; };
+		74036C59225ED48E00AD1F63 /* YMToonOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMToonOperation.m; sourceTree = "<group>"; };
 		74366F58222E96C7004A8916 /* TextRenderPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextRenderPage.h; sourceTree = "<group>"; };
 		74366F59222E96C7004A8916 /* TextRenderPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextRenderPage.m; sourceTree = "<group>"; };
 		74366F5B2230EF67004A8916 /* GlyphInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlyphInfo.h; sourceTree = "<group>"; };
@@ -84,6 +103,7 @@
 		745ADD56215CE0B4005CAC69 /* YMDFilterProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMDFilterProcessor.m; sourceTree = "<group>"; };
 		745ADD5A215CE31B005CAC69 /* ImageFilterShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ImageFilterShaders.metal; sourceTree = "<group>"; };
 		745ADD61216B069F005CAC69 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		7477B3AF225ED6E400BBA623 /* YMToonOperation.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = YMToonOperation.metal; sourceTree = "<group>"; };
 		747BA33A225DD88D00CCD323 /* YMLUTFilterOperationShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = YMLUTFilterOperationShader.metal; sourceTree = "<group>"; };
 		74A008072254CD1E004466D1 /* YMTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMTexture.h; sourceTree = "<group>"; };
 		74A008082254CD1E004466D1 /* YMTexture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMTexture.m; sourceTree = "<group>"; };
@@ -166,6 +186,18 @@
 				7443F5E7225CAE7C00E6D125 /* YMLUTFilterOperation.h */,
 				7443F5E8225CAE7C00E6D125 /* YMLUTFilterOperation.m */,
 				747BA33A225DD88D00CCD323 /* YMLUTFilterOperationShader.metal */,
+				74036C49225EC51200AD1F63 /* YMSaturationOperation.h */,
+				74036C4A225EC51200AD1F63 /* YMSaturationOperation.m */,
+				74036C4C225EC52600AD1F63 /* YMSaturationShader.metal */,
+				74036C4E225ECB6900AD1F63 /* YMBrightnessOperation.h */,
+				74036C4F225ECB6900AD1F63 /* YMBrightnessOperation.m */,
+				74036C51225ECB7A00AD1F63 /* YMBrightnessShader.metal */,
+				74036C53225ED19B00AD1F63 /* YMZoomBlurOperation.h */,
+				74036C54225ED19B00AD1F63 /* YMZoomBlurOperation.m */,
+				74036C56225ED20900AD1F63 /* YMZoomBlurShader.metal */,
+				74036C58225ED48E00AD1F63 /* YMToonOperation.h */,
+				74036C59225ED48E00AD1F63 /* YMToonOperation.m */,
+				7477B3AF225ED6E400BBA623 /* YMToonOperation.metal */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -510,15 +542,20 @@
 			files = (
 				74A99F9A215B38DB000881C3 /* ViewController.m in Sources */,
 				747BA33B225DD88E00CCD323 /* YMLUTFilterOperationShader.metal in Sources */,
+				74036C50225ECB6900AD1F63 /* YMBrightnessOperation.m in Sources */,
 				74A0080F2254D26B004466D1 /* YMConstants.m in Sources */,
 				74F33BDF2185F693000F28B2 /* YMDLightDemoPage.m in Sources */,
+				7477B3B0225ED6E400BBA623 /* YMToonOperation.metal in Sources */,
 				7443F5E9225CAE7C00E6D125 /* YMLUTFilterOperation.m in Sources */,
 				745030AA21B9FB56000BB235 /* SamplerDemoPage.m in Sources */,
 				745030AC21BA0059000BB235 /* SamplerDemoShader.metal in Sources */,
 				74B261A62180521400D83118 /* CubeShaders.metal in Sources */,
+				74036C52225ECB7A00AD1F63 /* YMBrightnessShader.metal in Sources */,
 				74A108E02251ABA10096DB58 /* CustomMetalView.m in Sources */,
 				7443F5DE225C2F1A00E6D125 /* YMTextureInput.m in Sources */,
+				74036C57225ED20900AD1F63 /* YMZoomBlurShader.metal in Sources */,
 				745ADD5B215CE31B005CAC69 /* ImageFilterShaders.metal in Sources */,
+				74036C55225ED19B00AD1F63 /* YMZoomBlurOperation.m in Sources */,
 				745ADD53215CCBAA005CAC69 /* YMDVideoLUTFilterPage.m in Sources */,
 				745030A021B8AEB7000BB235 /* VertexDescrpitorPage.m in Sources */,
 				74F33BD92183370E000F28B2 /* YMDComputeKernelPage.m in Sources */,
@@ -539,6 +576,9 @@
 				7401BEC122559213005A40F2 /* YMBasicOperation.m in Sources */,
 				745ADD50215CCB90005CAC69 /* YMDImageLUTFilterPage.m in Sources */,
 				74F33BE12185F6E9000F28B2 /* LightKernel.metal in Sources */,
+				74036C5A225ED48E00AD1F63 /* YMToonOperation.m in Sources */,
+				74036C4D225EC52600AD1F63 /* YMSaturationShader.metal in Sources */,
+				74036C4B225EC51200AD1F63 /* YMSaturationOperation.m in Sources */,
 				74A108DD2251AB850096DB58 /* CAMetalLayerPage.m in Sources */,
 				7401BEC322559421005A40F2 /* YMStandardShaderFunctions.metal in Sources */,
 			);

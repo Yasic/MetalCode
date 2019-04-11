@@ -101,9 +101,9 @@
     } else {
         [self renderTexture:drawable.texture commandBuffer:commandBuffer imageVerteices:kStandardVertexs imageVerteicesLength:kStandardVertexsLength textureCoordinates:kStandardTextureCoordinates textureCoordinatesLength:kStandardTextureCoordinatesLength vertextCount:4];
     }
-    dispatch_semaphore_signal(self.textureInputSemaphore);
     [commandBuffer presentDrawable:drawable];
     [commandBuffer commit];
+    dispatch_semaphore_signal(self.textureInputSemaphore);
 }
 
 - (void)renderTexture:(id<MTLTexture>)outputTexture

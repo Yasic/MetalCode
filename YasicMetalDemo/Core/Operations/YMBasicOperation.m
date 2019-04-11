@@ -45,7 +45,7 @@
 
 - (instancetype)initWithVertexFunction:(NSString *)vertexFunc fragmentFunction:(NSString *)fragmentFunc maxInputCount:(NSInteger)maxInputCount
 {
-    self = [self init];
+    self = [super init];
     if (self){
         self.maxInputCount = maxInputCount;
         id<MTLFunction> verFunc = [[YMMetalContext shareContext].defaultLibrary newFunctionWithName:vertexFunc];
