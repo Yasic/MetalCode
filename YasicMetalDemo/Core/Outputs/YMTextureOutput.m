@@ -11,6 +11,7 @@
 #import "YMConstants.h"
 #import <MetalKit/MetalKit.h>
 #import <Masonry.h>
+#import "YMBasicTool.h"
 
 @interface YMTextureOutput()<MTKViewDelegate>
 
@@ -153,7 +154,7 @@ textureCoordinatesLength:(NSInteger)textureCoordinatesLength
     if (!_mtkView) {
         _mtkView = [[MTKView alloc] initWithFrame:self.frame device:[YMMetalContext shareContext].device];
         _mtkView.delegate = self;
-//        _mtkView.paused = YES;
+        _mtkView.framebufferOnly = NO;
     }
     return _mtkView;
 }

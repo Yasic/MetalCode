@@ -34,6 +34,11 @@
 		745ADD5B215CE31B005CAC69 /* ImageFilterShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 745ADD5A215CE31B005CAC69 /* ImageFilterShaders.metal */; };
 		745ADD62216B06A0005CAC69 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 745ADD61216B069F005CAC69 /* video.mp4 */; };
 		7477B3B0225ED6E400BBA623 /* YMToonOperation.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7477B3AF225ED6E400BBA623 /* YMToonOperation.metal */; };
+		7477B3BF225F657800BBA623 /* the_scream.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7477B3BB225F657800BBA623 /* the_scream.mlmodel */; };
+		7477B3C0225F657800BBA623 /* mosaic.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7477B3BC225F657800BBA623 /* mosaic.mlmodel */; };
+		7477B3C1225F657800BBA623 /* udnie.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7477B3BD225F657800BBA623 /* udnie.mlmodel */; };
+		7477B3C2225F657800BBA623 /* candy.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7477B3BE225F657800BBA623 /* candy.mlmodel */; };
+		7477B3C922601F6600BBA623 /* YMStylizeOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7477B3C822601F6600BBA623 /* YMStylizeOperation.m */; };
 		747BA33B225DD88E00CCD323 /* YMLUTFilterOperationShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 747BA33A225DD88D00CCD323 /* YMLUTFilterOperationShader.metal */; };
 		74A008092254CD1E004466D1 /* YMTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A008082254CD1E004466D1 /* YMTexture.m */; };
 		74A0080C2254CE1C004466D1 /* YMMetalContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A0080B2254CE1C004466D1 /* YMMetalContext.m */; };
@@ -105,6 +110,12 @@
 		745ADD61216B069F005CAC69 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		7477B3AF225ED6E400BBA623 /* YMToonOperation.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = YMToonOperation.metal; sourceTree = "<group>"; };
 		7477B3B8225F5F1A00BBA623 /* YMMetalDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMMetalDefine.h; sourceTree = "<group>"; };
+		7477B3BB225F657800BBA623 /* the_scream.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = the_scream.mlmodel; sourceTree = "<group>"; };
+		7477B3BC225F657800BBA623 /* mosaic.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = mosaic.mlmodel; sourceTree = "<group>"; };
+		7477B3BD225F657800BBA623 /* udnie.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = udnie.mlmodel; sourceTree = "<group>"; };
+		7477B3BE225F657800BBA623 /* candy.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = candy.mlmodel; sourceTree = "<group>"; };
+		7477B3C722601F6600BBA623 /* YMStylizeOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMStylizeOperation.h; sourceTree = "<group>"; };
+		7477B3C822601F6600BBA623 /* YMStylizeOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMStylizeOperation.m; sourceTree = "<group>"; };
 		747BA33A225DD88D00CCD323 /* YMLUTFilterOperationShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = YMLUTFilterOperationShader.metal; sourceTree = "<group>"; };
 		74A008072254CD1E004466D1 /* YMTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMTexture.h; sourceTree = "<group>"; };
 		74A008082254CD1E004466D1 /* YMTexture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMTexture.m; sourceTree = "<group>"; };
@@ -200,6 +211,8 @@
 				74036C58225ED48E00AD1F63 /* YMToonOperation.h */,
 				74036C59225ED48E00AD1F63 /* YMToonOperation.m */,
 				7477B3AF225ED6E400BBA623 /* YMToonOperation.metal */,
+				7477B3C722601F6600BBA623 /* YMStylizeOperation.h */,
+				7477B3C822601F6600BBA623 /* YMStylizeOperation.m */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -283,6 +296,17 @@
 			path = MetalShader;
 			sourceTree = "<group>";
 		};
+		7477B3BA225F657800BBA623 /* TrainedModels */ = {
+			isa = PBXGroup;
+			children = (
+				7477B3BB225F657800BBA623 /* the_scream.mlmodel */,
+				7477B3BC225F657800BBA623 /* mosaic.mlmodel */,
+				7477B3BD225F657800BBA623 /* udnie.mlmodel */,
+				7477B3BE225F657800BBA623 /* candy.mlmodel */,
+			);
+			path = TrainedModels;
+			sourceTree = "<group>";
+		};
 		74A008052254CC9C004466D1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +375,7 @@
 		74A99F94215B38DB000881C3 /* YasicMetalDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7477B3BA225F657800BBA623 /* TrainedModels */,
 				74A008052254CC9C004466D1 /* Core */,
 				74A108DA2251AB530096DB58 /* CAMetalLayerPage */,
 				74366F57222E969D004A8916 /* TextRenderPage */,
@@ -546,6 +571,8 @@
 				747BA33B225DD88E00CCD323 /* YMLUTFilterOperationShader.metal in Sources */,
 				74036C50225ECB6900AD1F63 /* YMBrightnessOperation.m in Sources */,
 				74A0080F2254D26B004466D1 /* YMConstants.m in Sources */,
+				7477B3C922601F6600BBA623 /* YMStylizeOperation.m in Sources */,
+				7477B3C2225F657800BBA623 /* candy.mlmodel in Sources */,
 				74F33BDF2185F693000F28B2 /* YMDLightDemoPage.m in Sources */,
 				7477B3B0225ED6E400BBA623 /* YMToonOperation.metal in Sources */,
 				7443F5E9225CAE7C00E6D125 /* YMLUTFilterOperation.m in Sources */,
@@ -571,8 +598,11 @@
 				7443F5E6225C5A0700E6D125 /* YMBasicTool.m in Sources */,
 				745030A221B8AFB0000BB235 /* VertexDescriptor.metal in Sources */,
 				74A99F97215B38DB000881C3 /* AppDelegate.m in Sources */,
+				7477B3C0225F657800BBA623 /* mosaic.mlmodel in Sources */,
+				7477B3C1225F657800BBA623 /* udnie.mlmodel in Sources */,
 				74B261A42180273000D83118 /* CubeViewController.m in Sources */,
 				74366F5D2230EF67004A8916 /* GlyphInfo.m in Sources */,
+				7477B3BF225F657800BBA623 /* the_scream.mlmodel in Sources */,
 				745030B021BA9D87000BB235 /* DepthStencilPage.m in Sources */,
 				74366F5A222E96C7004A8916 /* TextRenderPage.m in Sources */,
 				7401BEC122559213005A40F2 /* YMBasicOperation.m in Sources */,

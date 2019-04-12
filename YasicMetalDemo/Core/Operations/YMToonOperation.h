@@ -13,12 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YMToonOperation : YMBasicOperation
 
 /**
- 梯度阈值
+ 梯度阈值，越小描边越明显
  */
 @property (nonatomic, assign) float magTol;
 
 /**
- 量化级别
+ 量化级别，越小颜色数量越少
  */
 @property (nonatomic, assign) float quantize;
 

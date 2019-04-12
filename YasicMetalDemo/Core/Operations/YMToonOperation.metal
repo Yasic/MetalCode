@@ -24,7 +24,7 @@ fragment half4 standardToonFragment(YMStandardSingleInputVertexIO fragmentInput 
     float2 texCoord = fragmentInput.textureCoordinate;
     half4 originColor = inputTexture.sample(quadSampler, texCoord);
     
-    // Sobel Operator
+    // 获取当前纹理的尺寸
     float2 resolution = float2(inputTexture.get_width(), inputTexture.get_height());
     
     float2 stp0 = float2(1./resolution.x, 0.);
@@ -46,13 +46,13 @@ fragment half4 standardToonFragment(YMStandardSingleInputVertexIO fragmentInput 
     float GValue = length(float2(Gx, Gy));
     
     if (GValue > uniforms.magTol) {
-        return half4(0., 0., 0., 1.);
+        return half4(0., 0., 0., 1.0);
     } else {
-        // Color Quantization
+        // 统一颜色量化处理
         originColor.rgb *= uniforms.quantize;
         originColor.rgb += half3(.5, .5, .5);
         int3 intrgb = int3(originColor.rgb);
         originColor.rgb = half3(intrgb) / uniforms.quantize;
-        return half4(originColor.rgb, 1.);
+        return half4(originColor.rgb, 1.0);
     }
 }

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MetalKit/MetalKit.h>
 #import "YMConstants.h"
+#import "YMTexture.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

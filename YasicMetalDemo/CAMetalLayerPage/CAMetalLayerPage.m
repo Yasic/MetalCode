@@ -17,6 +17,7 @@
 #import "YMBrightnessOperation.h"
 #import "YMZoomBlurOperation.h"
 #import "YMToonOperation.h"
+#import "YMStylizeOperation.h"
 
 @interface CAMetalLayerPage ()
 
@@ -34,7 +35,7 @@
 
 @property (nonatomic, assign) float intensity;
 @property (nonatomic, assign) float offset;
-@property (nonatomic, strong) YMToonOperation *operation;
+@property (nonatomic, strong) YMSaturationOperation *operation;
 
 @end
 
@@ -49,7 +50,7 @@
         make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
     }];
     self.textureInput = [[YMTextureInput alloc] initWithUIImage:[UIImage imageNamed:@"DogLogo"]];
-    self.operation = [[YMToonOperation alloc] init];
+    self.operation = [[YMSaturationOperation alloc] init];
     self.textureInput.imageOutput = self.operation;
     self.operation.imageOutput = self.outputView;
     [self.textureInput processTexture];
@@ -63,11 +64,11 @@
     [self.view addSubview:slider];
     slider.tag = index;
     if (index == 0) {
-        slider.minimumValue = 0;
-        slider.maximumValue = 1.0;
+        slider.minimumValue = -0.0;
+        slider.maximumValue = 2.0;
     } else {
-        slider.minimumValue = 0;
-        slider.maximumValue = 20;
+        slider.minimumValue = 0.0;
+        slider.maximumValue = 2.0;
     }
     slider.value = 0.0;
     slider.continuous = YES;
@@ -82,13 +83,7 @@
 
 - (void)sliderValueChanged:(id)sender
 {
-    UISlider *slider = (UISlider *)sender;
-    if (slider.tag == 0) {
-        self.operation.magTol = slider.value;
-    } else {
-        self.operation.quantize = slider.value;
-    }
-    [self.textureInput processTexture];
+    self.operation.saturation = ((UISlider *)sender).value;
 }
 
 - (YMTextureOutput *)outputView
